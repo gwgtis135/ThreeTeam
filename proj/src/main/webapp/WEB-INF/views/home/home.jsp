@@ -16,14 +16,7 @@ WEBSITE: https://themefisher.com
   <meta charset="utf-8">
   <title>Medic | Medical HTML Template</title>
 
-  <!-- ** Mobile Specific Metas ** -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Medical HTML Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Medical HTML Template v1.0">
-  
-  <!-- ** Plugins Needed for the Project ** -->
+   <!-- ** Plugins Needed for the Project ** -->
   <!-- bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
   <!-- Slick Carousel -->

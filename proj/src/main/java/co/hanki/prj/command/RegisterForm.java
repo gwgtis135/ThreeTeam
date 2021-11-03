@@ -10,7 +10,7 @@ public class RegisterForm implements Command {
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
 		
-		return "member/registerForm";
+		return "member/registerForm.jsp";
 	}
 
 }
