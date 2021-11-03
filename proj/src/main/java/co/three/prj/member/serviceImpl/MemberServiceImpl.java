@@ -42,4 +42,10 @@ public class MemberServiceImpl implements MemberService {
 		return map.deleteMember(vo);
 	}
 
+	@Override
+	public int ackMember(MemberVO vo) {
+		
+		return map.ackMember(vo);
+	}
+
 }
