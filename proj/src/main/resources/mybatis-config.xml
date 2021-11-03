@@ -17,6 +17,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="co/hanki/prj/member/serviceImpl/member-map.xml"/>
+    <mapper resource="co/three/prj/member/serviceImpl/member-map.xml"/>
   </mappers>
 </configuration>
