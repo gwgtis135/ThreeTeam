@@ -53,12 +53,6 @@ WEBSITE: https://themefisher.com
   <div class="page-wrapper">
 
   
-
-
-
-
-
-
 <!--Service Section-->
 <section class="service-section bg-gray section">
   <div class="container">
