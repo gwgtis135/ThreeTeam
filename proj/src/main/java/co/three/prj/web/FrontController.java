@@ -1,4 +1,4 @@
-package co.hanki.prj.web;
+package co.three.prj.web;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -11,18 +11,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.hanki.prj.comm.Command;
-import co.hanki.prj.command.AjaxMemberList;
-import co.hanki.prj.command.AjaxTest;
-import co.hanki.prj.command.Charts;
-import co.hanki.prj.command.HomeCommand;
-import co.hanki.prj.command.Logout;
-import co.hanki.prj.command.MemberList;
-import co.hanki.prj.command.MemberLogin;
-import co.hanki.prj.command.MemberLoginForm;
-import co.hanki.prj.command.RegisterForm;
-import co.hanki.prj.command.RegisterMember;
-import co.hanki.prj.command.Test;
+import co.three.prj.comm.Command;
+import co.three.prj.command.AjaxMemberList;
+import co.three.prj.command.AjaxTest;
+import co.three.prj.command.Charts;
+import co.three.prj.command.HomeCommand;
+import co.three.prj.command.Logout;
+import co.three.prj.command.MemberList;
+import co.three.prj.command.MemberLogin;
+import co.three.prj.command.MemberLoginForm;
+import co.three.prj.command.RegisterForm;
+import co.three.prj.command.RegisterMember;
+import co.three.prj.command.Test;
 
 
 @WebServlet("*.do")

@@ -1,16 +1,15 @@
-package co.hanki.prj.command;
+package co.three.prj.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.hanki.prj.comm.Command;
+import co.three.prj.comm.Command;
 
-public class Test implements Command {
+public class MemberLoginForm implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "home.do";
+		return "member/memberLoginForm";
 	}
 
 }

@@ -1,4 +1,4 @@
-package co.hanki.prj.comm;
+package co.three.prj.comm;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

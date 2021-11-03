@@ -6,7 +6,6 @@
 	<definition name="layout"
 		template="/WEB-INF/views/layouts/layout.jsp">
 		<put-attribute name="title" value="MyHome" />
-		<put-attribute name="side" value="/WEB-INF/views/layouts/side.jsp" />
 		<put-attribute name="header"
 			value="/WEB-INF/views/layouts/header.jsp" />
 		<put-attribute name="body" value="" />
@@ -16,7 +15,7 @@
 <definition name="adminLayout"
 		template="/WEB-INF/views/layouts/layout.jsp">
 		<put-attribute name="title" value="MyHome" />
-		<put-attribute name="side" value="/WEB-INF/views/layouts/side.jsp" />
+		
 		<put-attribute name="header"
 			value="/WEB-INF/views/layouts/header.jsp" />
 		<put-attribute name="body" value="" />

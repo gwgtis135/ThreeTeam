@@ -1,13 +1,13 @@
-package co.hanki.prj.member.serviceImpl;
+package co.three.prj.member.serviceImpl;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import co.hanki.prj.comm.DataSource;
-import co.hanki.prj.member.service.MemberMapper;
-import co.hanki.prj.member.service.MemberService;
-import co.hanki.prj.member.service.MemberVO;
+import co.three.prj.comm.DataSource;
+import co.three.prj.member.service.MemberMapper;
+import co.three.prj.member.service.MemberService;
+import co.three.prj.member.service.MemberVO;
 
 public class MemberServiceImpl implements MemberService {
 	private SqlSession sqlSession = DataSource.getInstance().openSession(true);

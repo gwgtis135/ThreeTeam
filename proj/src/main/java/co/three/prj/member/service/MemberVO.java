@@ -1,4 +1,4 @@
-package co.hanki.prj.member.service;
+package co.three.prj.member.service;
 
 public class MemberVO {
 	private String id;

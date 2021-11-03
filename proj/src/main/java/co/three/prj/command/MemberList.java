@@ -1,11 +1,11 @@
-package co.hanki.prj.command;
+package co.three.prj.command;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.hanki.prj.comm.Command;
-import co.hanki.prj.member.service.MemberService;
-import co.hanki.prj.member.serviceImpl.MemberServiceImpl;
+import co.three.prj.comm.Command;
+import co.three.prj.member.service.MemberService;
+import co.three.prj.member.serviceImpl.MemberServiceImpl;
 
 public class MemberList implements Command {
 
