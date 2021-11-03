@@ -19,13 +19,15 @@ public class RegisterMember implements Command {
 		vo.setId(request.getParameter("id"));
 		vo.setPassword(request.getParameter("password"));
 		vo.setName(request.getParameter("name"));
-		vo.setAddress(request.getParameter("address"));
+		vo.setAddress(request.getParameter("address")+" "+request.getParameter("detailAddress"));
 		vo.setAuthor(request.getParameter("author"));
+		
 		vo.setTel(request.getParameter("tel"));
+		System.out.println(request.getParameter("author"));
 		n=memberDao.insertMember(vo);
 		String viewPage = null;
 		if(n!=0) {
-			viewPage="memberLoginForm.do";
+			viewPage="memberAckMail.do"; //request값이 두번넘어가나?
 		}else {
 			request.setAttribute("message", "회원가입이 정상적으로 처리되지 못했습니다.");
 			viewPage="member/memberError";

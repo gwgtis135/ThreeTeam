@@ -17,6 +17,7 @@ import co.hanki.prj.command.AjaxTest;
 import co.hanki.prj.command.Charts;
 import co.hanki.prj.command.HomeCommand;
 import co.hanki.prj.command.Logout;
+import co.hanki.prj.command.MemberAckMail;
 import co.hanki.prj.command.MemberList;
 import co.hanki.prj.command.MemberLogin;
 import co.hanki.prj.command.MemberLoginForm;
@@ -51,6 +52,7 @@ public class FrontController extends HttpServlet {
 		map.put("/charts.do", new Charts()); //차트 보여주기
 		map.put("/ajaxTest.do", new AjaxTest()); //ajax test form
 		map.put("/ajaxMemberList.do", new AjaxMemberList()); // 실제 처리
+		map.put("/memberAckMail.do", new MemberAckMail());
 	}
 
 
