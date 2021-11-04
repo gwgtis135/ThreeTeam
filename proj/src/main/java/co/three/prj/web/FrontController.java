@@ -17,6 +17,7 @@ import co.three.prj.command.AjaxTest;
 import co.three.prj.command.Charts;
 import co.three.prj.command.HomeCommand;
 import co.three.prj.command.Logout;
+import co.three.prj.command.LostNotice;
 import co.three.prj.command.MemberList;
 import co.three.prj.command.MemberLogin;
 import co.three.prj.command.MemberLoginForm;
@@ -51,6 +52,8 @@ public class FrontController extends HttpServlet {
 		map.put("/charts.do", new Charts()); //차트 보여주기
 		map.put("/ajaxTest.do", new AjaxTest()); //ajax test form
 		map.put("/ajaxMemberList.do", new AjaxMemberList()); // 실제 처리
+		
+		map.put("/lostNotice.do", new LostNotice());	//분실물 페이지
 	}
 
 
