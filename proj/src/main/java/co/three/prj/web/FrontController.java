@@ -1,3 +1,4 @@
+
 package co.three.prj.web;
 
 import java.io.IOException;
@@ -23,6 +24,9 @@ import co.three.prj.command.MemberLoginForm;
 import co.three.prj.command.RegisterForm;
 import co.three.prj.command.RegisterMember;
 import co.three.prj.command.Test;
+import co.three.prj.command.LNDetail;
+import co.three.prj.command.noticeForm;
+import co.three.prj.command.FoundNotice;
 
 
 @WebServlet("*.do")
@@ -38,6 +42,8 @@ public class FrontController extends HttpServlet {
     }
 
   
+  
+	
   
   
 
@@ -55,6 +61,10 @@ public class FrontController extends HttpServlet {
 		map.put("/ajaxTest.do", new AjaxTest()); //ajax test form
 		map.put("/ajaxMemberList.do", new AjaxMemberList()); // 실제 처리
     map.put("/lostNotice.do", new LostNotice());	//분실물 페이지
+    
+    map.put("/foundNotice.do", new FoundNotice()); // 습득물 페이지
+		map.put("/lNDetail.do", new LNDetail()); // 습득물 상세페이지.
+		map.put("/noticeForm.do", new noticeForm()); // 글쓰기 입력폼.
 	}
 
 
@@ -87,4 +97,5 @@ public class FrontController extends HttpServlet {
 	}
 
 }
+
 
