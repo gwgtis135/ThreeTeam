@@ -7,6 +7,10 @@
 			and password= #{password}
 		</if>
 	</select>
+	
+	<select id="selectMemberCk" resultType="int">
+	select count(*) from users where id=#{id}
+	</select>
 
 
 	<insert id="insertMember" parameterType="co.three.prj.member.service.MemberVO">
