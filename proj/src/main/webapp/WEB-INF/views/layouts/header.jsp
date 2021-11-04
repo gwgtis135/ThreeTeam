@@ -17,6 +17,8 @@
   <meta name="generator" content="Themefisher Medical HTML Template v1.0">
   
   <!-- ** Plugins Needed for the Project ** -->
+    <!-- jquery-ui -->
+  <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css">
   <!-- bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
   <!-- Slick Carousel -->
@@ -28,8 +30,7 @@
   <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
   <!-- animate.css -->
   <link rel="stylesheet" href="plugins/animation/animate.min.css">
-  <!-- jquery-ui -->
-  <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css">
+
   <!-- timePicker -->
   <link rel="stylesheet" href="plugins/timePicker/timePicker.css">
   
@@ -53,15 +54,21 @@
           </a>
         </div>
       </div>
+      <div class="col-xl-8 col-lg-9">
+      <div class="right-side">
+      <ul class="contact-info pl-0 mb-4 mb-md-0" style="float:right">
           <div class="link-btn text-center text-lg-right">
-            <a href="registerForm.do" class="btn-style-one">로그인 / 회원가입</a>
+            <a href="memberLoginForm.do" class="btn-style-one" style="border-radius:150px">로그인</a>
+            <a href="registerForm.do" class="btn-style-one" style="border-radius:200px">회원가입</a>
           </div>
-      
+          </ul>
+      </div>
+    </div>
     </div>
   </div>
   <br>
   <!--Main Header-->
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="border-radius:200px"> 
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -81,8 +88,8 @@
         <li class="nav-item @@gallery">
           <a class="nav-link" href="gallery.html">공공기관 유실물 조회</a>
         </li>
-        <li class="nav-item @@team">
-          <a class="nav-link" href="team.html">후기게시판</a>
+           <li class="nav-item @@contact">
+          <a class="nav-link" href="contact.html">사이트 소개</a>
         </li>
         <c:if test="${not empty id }"><!-- 로그인 후 보이는 메뉴 -->
         <li class="nav-item @@appointment">
@@ -101,9 +108,7 @@
             </c:if>
           </ul>
         </li>
-        <li class="nav-item @@contact">
-          <a class="nav-link" href="contact.html">사이트 소개</a>
-        </li>
+    
       </ul>
     </div>
   </div>
