@@ -60,11 +60,6 @@
 		<!-- End of Content wrapper -->
 
 
-
-
-		
-
-
 	</div>
 	<!-- End of Content Wrapper -->
 	<!-- Footer End  -->
