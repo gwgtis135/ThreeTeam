@@ -37,6 +37,9 @@ public class FrontController extends HttpServlet {
 
     }
 
+  
+  
+  
 
 	public void init(ServletConfig config) throws ServletException {
 		//실제 수행할 명령들 넣어두는 곳
@@ -51,8 +54,7 @@ public class FrontController extends HttpServlet {
 		map.put("/charts.do", new Charts()); //차트 보여주기
 		map.put("/ajaxTest.do", new AjaxTest()); //ajax test form
 		map.put("/ajaxMemberList.do", new AjaxMemberList()); // 실제 처리
-		
-	
+    map.put("/lostNotice.do", new LostNotice());	//분실물 페이지
 	}
 
 
@@ -85,14 +87,4 @@ public class FrontController extends HttpServlet {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
 
