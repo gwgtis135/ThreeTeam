@@ -8,5 +8,6 @@ public interface MemberService {
 	int insertMember(MemberVO vo);
 	int updateMember(MemberVO vo);
 	int deleteMember(MemberVO vo);
+	int ackMember(MemberVO vo);
 	
 }

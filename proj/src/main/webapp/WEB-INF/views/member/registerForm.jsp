@@ -1,107 +1,337 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
-<title>회원가입</title>
-<!-- Custom fonts for this template-->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<title>회원 가입</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta name="keywords"
+	content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
+<meta name="author" content="Codedthemes" />
+<!-- Favicon icon -->
+
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<!-- Google font-->
 <link
-    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-    rel="stylesheet">
+	href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+	rel="stylesheet">
+<!-- Required Fremwork -->
+<link rel="stylesheet" type="text/css"
+	href="assets/css/bootstrap/css/bootstrap.min.css">
+<!-- waves.css -->
+<link rel="stylesheet" href="assets/pages/waves/css/waves.min.css"
+	type="text/css" media="all">
+<!-- ico font -->
+<link rel="stylesheet" type="text/css"
+	href="assets/icon/icofont/css/icofont.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" type="text/css"
+	href="assets/icon/font-awesome/css/font-awesome.min.css">
+<!-- Style.css -->
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-<!-- Custom styles for this template-->
-<link href="css/sb-admin-2.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 <script type="text/javascript">
-function CheckPassword(){
-	if(frm.password.value==frm.repeatPassword.value && frm.password.value !="")
-	{
-		frm.submit();	
-	}else{
-		alert("비밀번호가 다릅니다.")
-		frm.password.value="";
-		frm.repeatPassword.value="";
-		frm.password.focus();
-		return null;
-	}
-}
+	$(document).ready(function() {
+		$("#inputch").change(function() {
+			if ($("#inputch").is(":checked")) {
+				$('#chch').text("감사합니다!");
+			} else {
+				$('#chch').text("전화번호를 통한 알림서비스에 동의하시나요?");
+			}
+		});
+	});
 
+	function Checkitems() {
+		if ($("#terms").is(":checked")) {
+			if (frm.id.value != "") {
+				if (frm.password.value != "") {
+					if (frm.password.value == frm.confirmPassword.value) {
+						if (frm.name.value != "") {
+							if ((frm.tel.value != "" && $("#inputch").is(
+									":checked"))
+									|| !($("#inputch").is(":checked"))) {
+								if (frm.address.value != "") {
+									if (frm.detailAddress.value != "") {
+										if (frm.email.value != "") {
+											frm.submit();
+										}
+
+										else {
+											alert("이메일을 입력해주세요.");
+											frm.tel.focus();
+											return null;
+										}
+									} else {
+										alert("상세주소를 입력하세요");
+										frm.detailAddress.focus();
+										return null;
+									}
+								} else {
+									alert("주소를 입력해주세요");
+									return null;
+								}
+
+							} else {
+								alert("알림서비스에 동의하셨다면 전화번호를 입력해주세요.");
+								frm.tel.focus();
+								return null;
+							}
+						} else {
+							alert("이름을 입력해주세요.");
+							frm.name.focus();
+							return null;
+						}
+					} else {
+						alert("비밀번호가 다릅니다.")
+						frm.password.value = "";
+						frm.confirmPassword.value = "";
+						frm.password.focus();
+						return null;
+					}
+				} else {
+					alert("비밀번호를 입력해주세요.");
+					frm.password.focus();
+					return null;
+				}
+			} else {
+
+				alert("아이디를 입력해주세요.");
+				frm.id.focus();
+				return null;
+			}
+		} else {
+			alert("약관에 동의해주세요.");
+			return null;
+		}
+	};
+
+	window.onload = function() {
+		document
+				.getElementById("address_kakao")
+				.addEventListener(
+						"click",
+						function() { //주소입력칸을 클릭하면
+							document.getElementById("address_kakao").value = " ";
+							//카카오 지도 발생
+							new daum.Postcode(
+									{
+										oncomplete : function(data) { //선택시 입력값 세팅
+											document
+													.getElementById("address_kakao").value = data.address; // 주소 넣기
+											document
+													.querySelector(
+															"input[name=detailAddress]")
+													.focus(); //상세입력 포커싱
+										}
+									}).open();
+						});
+	}
 </script>
 </head>
 
-<body class="bg-gradient-primary">
+<body themebg-pattern="theme1">
+	<!-- Pre-loader start -->
+	<div class="theme-loader">
+		<div class="loader-track">
+			<div class="preloader-wrapper">
+				<div class="spinner-layer spinner-blue">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+				<div class="spinner-layer spinner-red">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
 
-    <div class="container">
+				<div class="spinner-layer spinner-yellow">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
 
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form id ="frm" class="user" action="registerMember.do" method="post">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="id" name="id" 
-                                            placeholder="Your Id">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="name" name="name" 
-                                            placeholder="Full Name">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="password" name="password" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="repeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control form-control-user" id="tel" name="tel"
-                                        placeholder="Tel">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="address" name="address"
-                                        placeholder="Address">
-                                </div>
-                                <div class="form-group">
-                                    <input type="hidden" class="form-control form-control-user" id="author" name="author"
-                                       value="USER">
-                                </div>
-                                <input type="button" class ="btn btn-primary btn-user btn-block" onclick="CheckPassword()" value="회원가입" >
-                                    
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="memberLoginForm.do">Already have an account? Login!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<div class="spinner-layer spinner-green">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="gap-patch">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Pre-loader end -->
+	<section class="login-block">
+		<!-- Container-fluid starts -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<form class="md-float-material form-material" id="frm" name="frm"
+						action="registerMember.do">
+						<div class="text-center">
+							<img src="assets/images/logo.png" alt="logo.png">
+						</div>
+						<div class="auth-box card">
+							<div class="card-block">
+								<div class="row m-b-20">
+									<div class="col-md-12">
+										<h3 class="text-center txt-primary">회원가입</h3>
+									</div>
+								</div>
+								<div class="form-group form-primary">
+									<input type="text" name="id" class="form-control"> <span
+										class="form-bar"></span> <label class="float-label">&#11088
+										ID를 입력해주세요!</label>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group form-primary">
+											<input type="password" id="password" name="password"
+												class="form-control"> <span class="form-bar"></span>
+											<label class="float-label">&#11088 비밀번호</label>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group form-primary">
+											<input type="password" id="confirmPassword"
+												class="form-control"> <span class="form-bar"></span>
+											<label class="float-label">&#11088 비밀번호 확인</label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group form-primary">
+									<input type="text" name="name" class="form-control"> <span
+										class="form-bar"></span> <label class="float-label">&#11088
+										이름을 입력해주세요!</label>
+								</div>
+								<div class="form-group form-primary">
+									<input type="tel" name="tel" class="form-control"> <span
+										class="form-bar"></span> <label class="float-label">전화번호를
+										입력해주세요!</label>
+								</div>
+								<div class="form-group form-primary">
+									<input type="tel" name="address" class="form-control"
+										id="address_kakao"> <span class="form-bar"></span> <label
+										class="float-label">&#11088 주소를 입력해주세요!</label>
+								</div>
+								<div class="form-group form-primary">
+									<input type="tel" name="detailAddress" class="form-control">
+									<span class="form-bar"></span> <label class="float-label">&#11088
+										상세 주소를 입력해주세요!</label>
+								</div>
 
-    </div>
+								<div class="form-group form-primary">
+									<input type="text" name="email" class="form-control"> <span
+										class="form-bar"></span> <label class="float-label">&#11088
+										이메일을 입력해주세요</label>
+
+
+								</div>
+
+								<br> <br>
+								<div class="row m-t-25 text-left">
+									<div class="col-md-12">
+										<div class="checkbox-fade fade-in-primary">
+											<label> <input type="checkbox" id="inputch" value="">
+												<span class="cr"><i
+													class="cr-icon icofont icofont-ui-check txt-primary"></i></span> <span
+												class="text-inverse" id="chch">전화번호를 통한 알림서비스에
+													동의하시나요?</span>
+											</label>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="checkbox-fade fade-in-primary">
+											<label> <input type="checkbox" id="terms" value="">
+												<span class="cr"><i
+													class="cr-icon icofont icofont-ui-check txt-primary"></i></span> <span
+												class="text-inverse">개인정보 관리에 대한 <a href="#">&#11088약관</a>을
+													읽었고 이에 동의합니다.
+											</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="row m-t-30">
+									<div class="col-md-12">
+										<button type="button"
+											class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20"
+											onclick="Checkitems()">가입하기!!</button>
+									</div>
+								</div>
+								<hr />
+								<div class="row">
+									<div class="col-md-10">
+										<p class="text-inverse text-left m-b-0">감사합니다.</p>
+										<br>
+										<p class="text-inverse text-left">
+											<a href="home.do"><b>메인페이지로 돌아가기</b></a>
+										</p>
+									</div>
+									<div class="col-md-2">
+										<img src="assets/images/auth/Logo-small-bottom.png"
+											alt="small-logo.png">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<input type="hidden" name="author" value="0">
+
+					</form>
+				</div>
+				<!-- end of col-sm-12 -->
+			</div>
+			<!-- end of row -->
+		</div>
+		<!-- end of container-fluid -->
+	</section>
+
+	<!-- Required Jquery -->
+	<script type="text/javascript" src="assets/js/jquery/jquery.min.js "></script>
+	<script type="text/javascript"
+		src="assets/js/jquery-ui/jquery-ui.min.js "></script>
+	<script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+	<script type="text/javascript"
+		src="assets/js/bootstrap/js/bootstrap.min.js "></script>
+	<!-- waves js -->
+	<script src="assets/pages/waves/js/waves.min.js"></script>
+	<!-- jquery slimscroll js -->
+	<script type="text/javascript"
+		src="assets/js/jquery-slimscroll/jquery.slimscroll.js"></script>
+	<script type="text/javascript" src="assets/js/common-pages.js"></script>
 </body>
 </html>
