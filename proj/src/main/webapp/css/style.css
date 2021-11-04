@@ -3118,7 +3118,7 @@ button:focus {
   color: #ffffff;
   line-height: 47px;
   text-align: center;
-  background: #48bdc5;
+  background: #495057;
   margin-right: 10px;
 }
 
@@ -3665,3 +3665,9 @@ button:focus {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* 메인이미지 */
+.col-12{
+	padding: 0!important;
+}
