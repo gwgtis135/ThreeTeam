@@ -17,6 +17,8 @@
   <meta name="generator" content="Themefisher Medical HTML Template v1.0">
   
   <!-- ** Plugins Needed for the Project ** -->
+    <!-- jquery-ui -->
+  <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css">
   <!-- bootstrap -->
   <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
   <!-- Slick Carousel -->
@@ -28,8 +30,7 @@
   <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
   <!-- animate.css -->
   <link rel="stylesheet" href="plugins/animation/animate.min.css">
-  <!-- jquery-ui -->
-  <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.css">
+
   <!-- timePicker -->
   <link rel="stylesheet" href="plugins/timePicker/timePicker.css">
   

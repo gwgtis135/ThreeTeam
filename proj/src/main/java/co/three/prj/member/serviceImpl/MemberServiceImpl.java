@@ -48,4 +48,10 @@ public class MemberServiceImpl implements MemberService {
 		return map.ackMember(vo);
 	}
 
+	@Override
+	public int selectMemberCk(String id) {
+		// TODO Auto-generated method stub
+		return map.selectMemberCk(id);
+	}
+
 }
